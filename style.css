@@ -36,6 +36,17 @@ hr{
     justify-content: space-between;
 }
 
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3{
+    margin: 0;
+    font-weight: normal;
+}
+
 /* Generate Button */
 button{
     font-family: 'Inter', sans-serif;
