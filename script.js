@@ -8,6 +8,10 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 // DOM Elements
 let password_1_El=document.getElementById("password_1_el")
 let password_2_El=document.getElementById("password_2_el")
+let password_3_El=document.getElementById("password_3_el")
+let password_4_El=document.getElementById("password_4_el")
+let password_5_El=document.getElementById("password_5_el")
+let password_6_El=document.getElementById("password_6_el")
 
 // Generate a Single Character
 function generate_a_char(){
@@ -16,17 +20,29 @@ function generate_a_char(){
     return random_item
 }
 
-// Generate Both Passwords
+// Generate Passwords
 function generate_password(length_of_password){
     let i = 0;
     const n = length_of_password;
     password_1=""
     password_2=""
+    password_3=""
+    password_4=""
+    password_5=""
+    password_6=""
     do {
         password_1+=generate_a_char();
         password_2+=generate_a_char();
+        password_3+=generate_a_char();
+        password_4+=generate_a_char();
+        password_5+=generate_a_char();
+        password_6+=generate_a_char();
         i++;
     } while(i < n);
     password_1_El.textContent=password_1
     password_2_El.textContent=password_2
+    password_3_El.textContent=password_3
+    password_4_El.textContent=password_4
+    password_5_El.textContent=password_5
+    password_6_El.textContent=password_6
 }
