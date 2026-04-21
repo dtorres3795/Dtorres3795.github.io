@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tips - Password Generator</title>
+        <title>Contact - Password Generator</title>
         <link rel="stylesheet" href="style.css">
 
         <!-- Fonts -->
@@ -26,15 +26,35 @@
         <nav id="navbar">
             <a href="index.html" class="nav-link">Generator</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="tips.html" class="nav-link active">Tips</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
             <a href="links.html" class="nav-link">Links</a>
             <a href="faq.html" class="nav-link">FAQ</a>
         </nav>
 
         <!-- Main Content -->
         <div id="wrapper">
-            <h2 class="page-heading">Tips</h2>
-            <p class="page-text">Coming soon.</p>
+
+            <h2 class="page-heading">Contact</h2>
+            <p class="page-text">Have feedback or questions? Fill out the form below.</p>
+
+            <!-- Contact Form -->
+            <form id="contact_form" onsubmit="submit_form(event)">
+
+                <label for="name_input">Name</label>
+                <input type="text" id="name_input" name="name" placeholder="Your name" required>
+
+                <label for="email_input">Email</label>
+                <input type="email" id="email_input" name="email" placeholder="Your email" required>
+
+                <label for="message_input">Message</label>
+                <textarea id="message_input" name="message" placeholder="Your message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+            <div id="form_result"></div>
+
         </div>
 
         <script src="script.js"></script>
