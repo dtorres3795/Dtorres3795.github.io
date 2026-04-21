@@ -75,3 +75,10 @@ body {
 
 .page-image {
     width: 100%;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+code {
+    background-color: #1a1a1a;
+    color: #e879
