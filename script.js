@@ -74,6 +74,8 @@ function generate_password(length_of_password) {
 }
 
 // Contact Form
+emailjs.init("YOUR_PUBLIC_KEY")
+
 function submit_form() {
     const name = document.getElementById("name") ? document.getElementById("name").value.trim() : ""
     const email = document.getElementById("email") ? document.getElementById("email").value.trim() : ""
@@ -95,10 +97,20 @@ function submit_form() {
         return
     }
 
-    result.textContent = "Thanks for reaching out, " + name + "! I'll get back to you soon."
-    result.className = "form_success"
-
-    document.getElementById("name").value = ""
-    document.getElementById("email").value = ""
-    document.getElementById("message").value = ""
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        from_name: name,
+        from_email: email,
+        message: message
+    })
+    .then(() => {
+        result.textContent = "Thanks for reaching out, " + name + "! I'll get back to you soon."
+        result.className = "form_success"
+        document.getElementById("name").value = ""
+        document.getElementById("email").value = ""
+        document.getElementById("message").value = ""
+    })
+    .catch(() => {
+        result.textContent = "Something went wrong. Please try again."
+        result.className = "form_error"
+    })
 }
