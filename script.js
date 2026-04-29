@@ -77,4 +77,10 @@ function generate_password(length_of_password){
     password_4_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_4
     password_5_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_5
     password_6_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_6
+    password_1_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_1
+    password_2_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_2
+    password_3_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_3
+    password_4_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_4
+    password_5_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_5
+    password_6_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_6
 }
