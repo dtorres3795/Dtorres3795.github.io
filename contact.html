@@ -4,7 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact - Password Generator</title>
         <link rel="stylesheet" href="style.css">
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +12,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:wght@200;300&family=Karla:wght@600;800&family=Orbitron&display=swap" rel="stylesheet">
     </head>
-
         <!-- Banner -->
         <div id="banner">
             <h1>World's Best Password Generator</h1>
         </div>
-
         <!-- Nav -->
         <nav id="navbar">
             <a href="index.html" class="nav-link">Generator</a>
@@ -27,16 +24,27 @@
             <a href="biography.html" class="nav-link">Biography</a>
             <a href="faq.html" class="nav-link">FAQ</a>
         </nav>
-
         <!-- Text -->
         <div id="wrapper">
-
             <h2 class="page-heading">Contact</h2>
-            <p class="page-text">Email:</p>
-            <p class="page-text"><a href="mailto:contactdt3795@gmail.com">contactdt3795@gmail.com</a></p>
+            <p class="page-text">Email: <a href="mailto:contactdt3795@gmail.com">contactdt3795@gmail.com</a></p>
 
+            <!-- Contact Form -->
+            <form id="contact_form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+                <button type="button" onclick="submit_form()">Send Message</button>
+            </form>
+
+            <div id="form_result"></div>
         </div>
-
         <script src="script.js"></script>
     </body>
 </html>
