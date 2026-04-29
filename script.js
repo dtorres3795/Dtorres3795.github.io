@@ -52,7 +52,7 @@ function generate_a_char(){
 
 // Audio effect
 function playSound() {
-    const ctx = new AudioContext()
+    const ctx = new AudioContext("vine-boom.mp3")
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
     osc.connect(gain)
