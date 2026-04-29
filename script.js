@@ -51,36 +51,33 @@ function generate_a_char(){
 }
 
 // Generate Passwords
-function generate_password(length_of_password){
-    if(!password_1_El) return
+function generate_password(length_of_password) {
+    if (!password_1_El) return
     check_spam()
-    let i = 0;
-    const n = length_of_password;
-    password_1=""
-    password_2=""
-    password_3=""
-    password_4=""
-    password_5=""
-    password_6=""
-    do {
-        password_1+=generate_a_char();
-        password_2+=generate_a_char();
-        password_3+=generate_a_char();
-        password_4+=generate_a_char();
-        password_5+=generate_a_char();
-        password_6+=generate_a_char();
-        i++;
-    } while(i < n);
-    password_1_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_1
-    password_2_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_2
-    password_3_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_3
-    password_4_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_4
-    password_5_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_5
-    password_6_El.textContent=Math.random() < 0.01 ? "$ucce$$" : password_6
-    password_1_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_1
-    password_2_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_2
-    password_3_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_3
-    password_4_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_4
-    password_5_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_5
-    password_6_El.textContent=Math.random() < 0.01 ? "Wi_believe_I_can_fi" : password_6
+    let password_1 = ""
+    let password_2 = ""
+    let password_3 = ""
+    let password_4 = ""
+    let password_5 = ""
+    let password_6 = ""
+    for (let i = 0; i < length_of_password; i++) {
+        password_1 += generate_a_char()
+        password_2 += generate_a_char()
+        password_3 += generate_a_char()
+        password_4 += generate_a_char()
+        password_5 += generate_a_char()
+        password_6 += generate_a_char()
+    }
+    function maybe(p) {
+        const roll = Math.random()
+        if (roll < 0.01) return "$ucce$$"
+        if (roll < 0.02) return "^wi_believe_i_can_fi^"
+        return p
+    }
+    password_1_El.textContent = maybe(password_1)
+    password_2_El.textContent = maybe(password_2)
+    password_3_El.textContent = maybe(password_3)
+    password_4_El.textContent = maybe(password_4)
+    password_5_El.textContent = maybe(password_5)
+    password_6_El.textContent = maybe(password_6)
 }
