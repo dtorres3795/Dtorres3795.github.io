@@ -72,3 +72,33 @@ function generate_password(length_of_password) {
     password_5_El.textContent = maybe(password_5)
     password_6_El.textContent = maybe(password_6)
 }
+
+// Contact Form
+function submit_form() {
+    const name = document.getElementById("name") ? document.getElementById("name").value.trim() : ""
+    const email = document.getElementById("email") ? document.getElementById("email").value.trim() : ""
+    const message = document.getElementById("message") ? document.getElementById("message").value.trim() : ""
+    const result = document.getElementById("form_result")
+
+    if (!result) return
+
+    if (!name || !email || !message) {
+        result.textContent = "Please fill in all fields before submitting."
+        result.className = "form_error"
+        return
+    }
+
+    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email_pattern.test(email)) {
+        result.textContent = "Please enter a valid email address."
+        result.className = "form_error"
+        return
+    }
+
+    result.textContent = "Thanks for reaching out, " + name + "! I'll get back to you soon."
+    result.className = "form_success"
+
+    document.getElementById("name").value = ""
+    document.getElementById("email").value = ""
+    document.getElementById("message").value = ""
+}
