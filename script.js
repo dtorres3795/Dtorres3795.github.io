@@ -36,7 +36,6 @@ function show_easter_egg() {
     setTimeout(() => { egg.style.display = "none" }, 3000)
 }
 
-// Generate a Single Character
 function generate_a_char() {
     return characters[Math.floor(Math.random() * characters.length)]
 }
@@ -71,46 +70,4 @@ function generate_password(length_of_password) {
     password_4_El.textContent = maybe(password_4)
     password_5_El.textContent = maybe(password_5)
     password_6_El.textContent = maybe(password_6)
-}
-
-// Contact Form
-emailjs.init("YOUR_PUBLIC_KEY")
-
-function submit_form() {
-    const name = document.getElementById("name") ? document.getElementById("name").value.trim() : ""
-    const email = document.getElementById("email") ? document.getElementById("email").value.trim() : ""
-    const message = document.getElementById("message") ? document.getElementById("message").value.trim() : ""
-    const result = document.getElementById("form_result")
-
-    if (!result) return
-
-    if (!name || !email || !message) {
-        result.textContent = "Please fill in all fields before submitting."
-        result.className = "form_error"
-        return
-    }
-
-    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!email_pattern.test(email)) {
-        result.textContent = "Please enter a valid email address."
-        result.className = "form_error"
-        return
-    }
-
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        from_name: name,
-        from_email: email,
-        message: message
-    })
-    .then(() => {
-        result.textContent = "Thanks for reaching out, " + name + "! I'll get back to you soon."
-        result.className = "form_success"
-        document.getElementById("name").value = ""
-        document.getElementById("email").value = ""
-        document.getElementById("message").value = ""
-    })
-    .catch(() => {
-        result.textContent = "Something went wrong. Please try again."
-        result.className = "form_error"
-    })
 }
