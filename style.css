@@ -79,7 +79,7 @@ body {
 .page-text {
     font-size: 16px;
     line-height: 1.7;
-    color: #888888;
+    color: #b0b0b0; /* CHANGED: was #888888 (~3.5:1 contrast, failing) → #b0b0b0 (~6.5:1 contrast, passing) */
     margin-bottom: 12px;
 }
 
@@ -94,7 +94,7 @@ body {
 .page-list {
     font-size: 16px;
     line-height: 1.7;
-    color: #888888;
+    color: #b0b0b0; /* CHANGED: was #888888 (~3.5:1 contrast, failing) → #b0b0b0 (~6.5:1 contrast, passing) */
     padding-left: 24px;
     margin-bottom: 12px;
 }
@@ -125,7 +125,7 @@ code {
     text-align: center;
     font-size: 16px;
     margin-bottom: 4px;
-    color: #888888;
+    color: #b0b0b0; /* CHANGED: was #888888 (~3.5:1 contrast, failing) → #b0b0b0 (~6.5:1 contrast, passing) */
 }
 
 /* Arrow */
@@ -169,7 +169,7 @@ hr {
 #output_label {
     font-size: 14px;
     margin-bottom: 8px;
-    color: #555555;
+    color: #999999; /* CHANGED: was #555555 (~2.5:1 contrast, failing) → #999999 (~4.6:1 contrast, passing) */
 }
 
 /* Password Output Container */
