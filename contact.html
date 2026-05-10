@@ -29,3 +29,45 @@
             <h2 class="page-heading">Contact</h2>
             <p class="page-text">Email: <a href="mailto:contactdt3795@gmail.com">contactdt3795@gmail.com</a></p>
 
+            <form id="contact_form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+
+                <button type="button" onclick="submitForm()">Send Message</button>
+            </form>
+
+            <div id="form_result"></div>
+        </div>
+
+        <script src="script.js"></script>
+        <script>
+            function submitForm() {
+                const name = document.getElementById("name").value.trim()
+                const email = document.getElementById("email").value.trim()
+                const message = document.getElementById("message").value.trim()
+                const result = document.getElementById("form_result")
+
+                if (!name || !email || !message) {
+                    result.style.display = "block"
+                    result.style.backgroundColor = "#2a1a1a"
+                    result.style.color = "#f87171"
+                    result.textContent = "Please fill out all fields before submitting."
+                    return
+                }
+
+                result.style.display = "block"
+                result.style.backgroundColor = "#1a1a2e"
+                result.style.color = "#e879f9"
+                result.textContent = "Thanks, " + name + "! Your message has been sent."
+
+                document.getElementById("contact_form").reset()
+            }
+        </script>
+    </body>
+</html>
