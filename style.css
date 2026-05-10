@@ -261,6 +261,32 @@ hr {
     display: block !important;
 }
 
+.page-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 15px;
+    color: #b0b0b0;
+}
+
+.page-table th {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #333333;
+    font-weight: 500;
+}
+
+.page-table td {
+    padding: 10px 14px;
+    border: 1px solid #333333;
+}
+
+.page-table tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
 /* Easter Egg */
 #easter_egg {
     display: none;
