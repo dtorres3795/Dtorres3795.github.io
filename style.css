@@ -12,6 +12,15 @@ body {
 
 #banner a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 #banner h1 {
